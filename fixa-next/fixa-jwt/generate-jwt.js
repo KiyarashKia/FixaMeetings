@@ -9,7 +9,7 @@ const payload = {
   aud: 'jitsi',
   iss: 'chat',
   sub: appID,
-  room: '*',
+  room: 'vpaas-magic-cookie-0830c11f8e634568bfc0482bb9ecf75f/FixaTeamRoom',
   context: {
     user: {
       name: 'FIXA Host',
