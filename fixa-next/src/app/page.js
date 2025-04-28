@@ -34,7 +34,7 @@ export default function Home() {
           SHOW_JITSI_WATERMARK: false,
           SHOW_BRAND_WATERMARK: false
         },
-        jwt: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wODMw..." // ✅ Paste your JWT here
+        jwt: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wODMwYzExZjhlNjM0NTY4YmZjMDQ4MmJiOWVjZjc1Zi80ZjYxZWIifQ.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtMDgzMGMxMWY4ZTYzNDU2OGJmYzA0ODJiYjllY2Y3NWYiLCJyb29tIjoiKiIsImNvbnRleHQiOnsidXNlciI6eyJuYW1lIjoiRklYQSBIb3N0IiwiZW1haWwiOiJob3N0QGZpeGEudGVhbSIsIm1vZGVyYXRvciI6dHJ1ZX0sImZlYXR1cmVzIjp7InJlY29yZGluZyI6dHJ1ZSwibGl2ZXN0cmVhbWluZyI6dHJ1ZSwidHJhbnNjcmlwdGlvbiI6ZmFsc2V9fSwiaWF0IjoxNzQ1ODI5Mzg4LCJleHAiOjE3NDU4MzI5ODh9.SDF9qZqMpkZmx8hHn0g5mjReRfS8f2XnAoCgm5sg-SpqzzWq3tZLaQ-tGon_tKPcy6gdTQXey4pA3Nbd-TfFQAn087vykoUdqCnb_IinHDM8uqZYR24K-MHvYL7vSju9pFCpd3IbXqNFPpF1voEDJ3bqFxPiRl2WjnkaD5eaeDfNlHslmrPP_okptLMmP5FTAPR_BTlOFT9ouFZY8V7jcsVKg-cF5wAsdKOebtjHzKiFyXnFhZop4TRg8TEfJPN-DXssPElwzY6rUwJml9BF33XL5bwJfiFCvuoh4XZ21PHqkB4S7JF28CagQ5PU-0hgmphQ6KExomLsDLq4Fnvjgw" // ✅ Paste your JWT here
       };
 
       new window.JitsiMeetExternalAPI(domain, options);
