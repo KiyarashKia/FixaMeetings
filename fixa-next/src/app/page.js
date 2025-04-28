@@ -18,39 +18,42 @@ export default function Home() {
   };
 
   useEffect(() => {
-    if (showMeeting) {
-      const script = document.createElement('script');
-      script.src = 'https://8x8.vc/vpaas-magic-cookie-0830c11f8e634568bfc0482bb9ecf75f/external_api.js';
-      script.onload = () => {
-        new window.JitsiMeetExternalAPI('8x8.vc', {
-          roomName: 'vpaas-magic-cookie-0830c11f8e634568bfc0482bb9ecf75f/FixaTeamRoom',
-          parentNode: document.getElementById('meet'),
-          configOverwrite: {
-            startWithAudioMuted: true,
-          },
-          interfaceConfigOverwrite: {
-            SHOW_JITSI_WATERMARK: false,
-            SHOW_BRAND_WATERMARK: false,
-          },
-          // Optional: if you're ready to use JWT features
-          // jwt: "your.jwt.token"
-        });
+    if (!showMeeting) return;
+
+    const script = document.createElement('script');
+    script.src = 'https://8x8.vc/vpaas-magic-cookie-0830c11f8e634568bfc0482bb9ecf75f/external_api.js';
+    script.onload = () => {
+      const domain = '8x8.vc';
+      const options = {
+        roomName: 'vpaas-magic-cookie-0830c11f8e634568bfc0482bb9ecf75f/FixaTeamRoom',
+        parentNode: document.getElementById('meet'),
+        configOverwrite: {
+          startWithAudioMuted: true
+        },
+        interfaceConfigOverwrite: {
+          SHOW_JITSI_WATERMARK: false,
+          SHOW_BRAND_WATERMARK: false
+        },
+        jwt: "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wODMw..." // ✅ Paste your JWT here
       };
-      document.body.appendChild(script);
-    }
+
+      new window.JitsiMeetExternalAPI(domain, options);
+    };
+
+    document.body.appendChild(script);
   }, [showMeeting]);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
       {!showMeeting ? (
         <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-sm text-center">
           <h2 className="text-2xl font-semibold mb-4 text-gray-800">FIXA Team Meeting</h2>
-          <input 
+          <input
             type="password"
             placeholder="Enter Password"
             value={enteredPass}
             onChange={(e) => setEnteredPass(e.target.value)}
-            className="w-full px-4 py-2 border rounded mb-3 text-gray-800" 
+            className="w-full px-4 py-2 border rounded mb-3 text-gray-800 placeholder-gray-400"
           />
           <button
             onClick={handleJoin}
