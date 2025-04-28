@@ -22,20 +22,20 @@ export default function Home() {
 
     const script = document.createElement('script');
     script.src = 'https://8x8.vc/vpaas-magic-cookie-0830c11f8e634568bfc0482bb9ecf75f/external_api.js';
-    script.onload = async () => {
+    script.onload = () => {
       const domain = '8x8.vc';
-      const response = await fetch('/api/generate-jwt');
-      const { token } = await response.json();
+
+      const token = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InZwYWFzLW1hZ2ljLWNvb2tpZS0wODMwYzExZjhlNjM0NTY4YmZjMDQ4MmJiOWVjZjc1Zi80ZjYxZWIifQ.eyJhdWQiOiJqaXRzaSIsImlzcyI6ImNoYXQiLCJzdWIiOiJ2cGFhcy1tYWdpYy1jb29raWUtMDgzMGMxMWY4ZTYzNDU2OGJmYzA0ODJiYjllY2Y3NWYiLCJyb29tIjoiKiIsImNvbnRleHQiOnsidXNlciI6eyJuYW1lIjoiRklYQSBIb3N0IiwiZW1haWwiOiJob3N0QGZpeGEudGVhbSIsIm1vZGVyYXRvciI6dHJ1ZX0sImZlYXR1cmVzIjp7InJlY29yZGluZyI6dHJ1ZSwibGl2ZXN0cmVhbWluZyI6dHJ1ZSwidHJhbnNjcmlwdGlvbiI6ZmFsc2V9fSwiaWF0IjoxNzQ1ODI4NTc1LCJleHAiOjE3NDU4MzIxNzV9.oGXMZOMYefuJoEh8cDxFsJy8Y2FiyqArkC1Sc4ScuF_U3IT9XV1as6SO1N7eAKle-oJ-zgA0MNGMXUX_6zd44T78IDErLgw-8l4AFuerYn4IvzSrv-EbdM2uw4p4YRSHkg38XNWanZzOKZx6oofrPdMo1gx2lzjYSOv4SBIKBhIZupxg8bcWXvl3_AikT3W5JzgGboITphlS_m8qby3YtItzCae82f9r_EAXukG1jMcTskmvcXL6f9ADiA9oQd2biazzGx2AyGctPwJKZQHHgJXrgzHMHDzHYNszZ5QnqUaOa8w1L2kkkbf2yeLuClYKd8DAmNfK5EO_nkbMgmzNAQ";
 
       const options = {
         roomName: 'vpaas-magic-cookie-0830c11f8e634568bfc0482bb9ecf75f/FixaTeamRoom',
         parentNode: document.getElementById('meet'),
         configOverwrite: {
-          startWithAudioMuted: true
+          startWithAudioMuted: true,
         },
         interfaceConfigOverwrite: {
           SHOW_JITSI_WATERMARK: false,
-          SHOW_BRAND_WATERMARK: false
+          SHOW_BRAND_WATERMARK: false,
         },
         jwt: token
       };
